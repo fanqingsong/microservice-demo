@@ -3,17 +3,53 @@ version: '2'
 services:
   gateway:
     build: traefik
+    command: --logLevel=DEBUG
+    networks:
+      - microservices
     ports:
       - "80:80"
-      - "443:443"
+      # - "443:443"
       - "9090:8080"
-  user:
-    build: user
+
+  # user:
+  #   build: user
+  #   networks:
+  #     - microservices
+  #   ports:
+  #     - "8081:80"
+
   cart:
     build: cart
+    networks:
+      - microservices
+    ports:
+      - "8082:80"
+
   product:
     build: product
+    networks:
+      - microservices
+    ports:
+      - "8083:80"
+
   event:
     build: event
+    networks:
+      - microservices
+    ports:
+      - "8084:80"
+
   web:
     build: web
+    networks:
+      - microservices
+    ports:
+      - "8085:80"
+
+networks:
+  microservices:
+    driver: bridge
+
+
+
+

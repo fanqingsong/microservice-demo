@@ -1,4 +1,4 @@
-FROM python:3.9.0-alpine
+FROM m.daocloud.io/docker.io/library/python:3.9.0-alpine
 
 ADD requirements.txt /app/requirements.txt
 

@@ -10,15 +10,15 @@ entryPoints:
     #     entryPoint:
     #       to: "webSecure"
 
-  webSecure:
-    address: ":443"
+  # webSecure:
+  #   address: ":443"
 
 providers:
   file:
     filename: /etc/traefik/dynamic.yml
 
 
-certificatesResolvers:
-  myresolver:
-    acme:
-      tlsChallenge: {}
+# certificatesResolvers:
+#   myresolver:
+#     acme:
+#       tlsChallenge: {}
