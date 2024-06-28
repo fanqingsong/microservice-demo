@@ -1,8 +1,8 @@
 http:
   routers:
-    # user:
-    #   rule: "Host(`api.example.com`) && PathPrefix(`/user`)"
-    #   service: user
+    user:
+      rule: "Host(`api.example.com`) && PathPrefix(`/user`)"
+      service: user
       # tls:
       #   certResolver: myresolver
       #   domains:
@@ -37,10 +37,10 @@ http:
       #     - main: web.example.com
 
   services:
-    # user:
-    #   loadBalancer:
-    #     servers:
-    #     - url: http://user
+    user:
+      loadBalancer:
+        servers:
+        - url: http://user
 
     product:
       loadBalancer:
